@@ -36,7 +36,7 @@ class ResultCell: UITableViewCell {
         
         wikiDescription.numberOfLines = 0
         containerView.layer.cornerRadius = 7
-        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius: 7).cgPath
+        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.layer.bounds, cornerRadius: 7).cgPath
         containerView.layer.shadowColor = color.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
         containerView.layer.shadowRadius = 5
