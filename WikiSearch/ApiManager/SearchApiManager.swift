@@ -10,6 +10,12 @@ import Foundation
 
 struct SearchApiManager {
     
+    /**
+     @breif: This method do api request for getting results based on searched text with completion block.
+     Parameter:
+     searchText -> user searched text.
+     CompletionBlock contains Result Model and Error message
+     **/
     func fetchSearch(text searchText: String, completionBlock block: @escaping(_ resultModel: ResultModel?, _ error: String?)-> Void) {
         let path = UrlExtension.queryPath + searchText
         Webservice.shared.apiRequest(path, requestType: .get) { (data, error) in

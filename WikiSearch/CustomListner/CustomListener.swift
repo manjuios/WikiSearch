@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ @breif: This is generic data binding class. Use this bind data from viewModel to ViewController.
+**/
 class CustomListener<T> {
     typealias Listener = (T) -> Void
     var listener: Listener?

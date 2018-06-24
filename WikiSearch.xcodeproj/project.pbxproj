@@ -18,6 +18,7 @@
 		33554FE720DE3B050041F310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33554FE520DE3B050041F310 /* LaunchScreen.storyboard */; };
 		33554FF220DE3B060041F310 /* WikiSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33554FF120DE3B060041F310 /* WikiSearchTests.swift */; };
 		33554FFD20DE3B060041F310 /* WikiSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33554FFC20DE3B060041F310 /* WikiSearchUITests.swift */; };
+		33A4875320DF685E006DE108 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4875220DF685E006DE108 /* CoreData.swift */; };
 		33DA4A0920DE55C100C9AA23 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DA4A0820DE55C100C9AA23 /* Webservices.swift */; };
 		33DA4A0C20DE5DAE00C9AA23 /* SearchApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DA4A0B20DE5DAE00C9AA23 /* SearchApiManager.swift */; };
 		33DA4A1020DE621600C9AA23 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DA4A0F20DE621600C9AA23 /* ResultModel.swift */; };
@@ -62,6 +63,7 @@
 		33554FF820DE3B060041F310 /* WikiSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33554FFC20DE3B060041F310 /* WikiSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchUITests.swift; sourceTree = "<group>"; };
 		33554FFE20DE3B060041F310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33A4875220DF685E006DE108 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		33DA4A0820DE55C100C9AA23 /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
 		33DA4A0B20DE5DAE00C9AA23 /* SearchApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiManager.swift; sourceTree = "<group>"; };
 		33DA4A0F20DE621600C9AA23 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -162,10 +164,10 @@
 				33DA4A0D20DE61D600C9AA23 /* ViewModel */,
 				33DA4A0A20DE5D9D00C9AA23 /* ApiManager */,
 				33DA4A0720DE55A500C9AA23 /* Webservice */,
-				33554FD920DE3AF90041F310 /* AppDelegate.swift */,
-				33DA4A1620DE988C00C9AA23 /* ResultCell.swift */,
+				33A4875420DF8043006DE108 /* View */,
 				33554FDB20DE3AF90041F310 /* ViewController.swift */,
 				33554FDD20DE3AFA0041F310 /* Main.storyboard */,
+				33554FD920DE3AF90041F310 /* AppDelegate.swift */,
 				33554FE320DE3B050041F310 /* Assets.xcassets */,
 				33554FE520DE3B050041F310 /* LaunchScreen.storyboard */,
 				33554FE820DE3B050041F310 /* Info.plist */,
@@ -195,8 +197,17 @@
 		33A4875120DF5E83006DE108 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				33A4875220DF685E006DE108 /* CoreData.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		33A4875420DF8043006DE108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33DA4A1620DE988C00C9AA23 /* ResultCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		33DA4A0720DE55A500C9AA23 /* Webservice */ = {
@@ -543,6 +554,7 @@
 				33554FE220DE3AFA0041F310 /* WikiSearch.xcdatamodeld in Sources */,
 				33DA4A1520DE736D00C9AA23 /* CustomListener.swift in Sources */,
 				33DA4A1020DE621600C9AA23 /* ResultModel.swift in Sources */,
+				33A4875320DF685E006DE108 /* CoreData.swift in Sources */,
 				33DA4A0C20DE5DAE00C9AA23 /* SearchApiManager.swift in Sources */,
 				33DA4A1720DE988D00C9AA23 /* ResultCell.swift in Sources */,
 				33DA4A1B20DEAA9100C9AA23 /* CustomColors.swift in Sources */,

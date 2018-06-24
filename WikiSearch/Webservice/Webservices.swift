@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ @brief: RequestType is String enum. It is to handle the api request type. Like GET,POST etc.
+**/
 enum ResuestType: String {
     case get = "GET"
     case post = "POST"
@@ -16,6 +19,12 @@ enum ResuestType: String {
 struct Webservice {
     static let shared = Webservice()
     
+    /**
+     @brief: This method is to make server request. It will return data and error in completion block.
+     Parameters :
+        path -> endpoint and query path.
+        type -> Request Type. POST,GET etc.
+    **/
     func apiRequest(_ path: String, requestType type: ResuestType, completionBlock block: @escaping(_ data: Data?, _ error: Error?)-> Void) {
         guard let request = prepareRequest(path, .get) else {return}
         let urlSession = URLSession.shared
@@ -41,6 +50,12 @@ struct Webservice {
         dataTask.resume()
     }
     
+    /**
+     @brief: This method prepares UrlRequest.
+     Parameters : path -> endpoint and query path
+            type -> Request Type. POST,GET etc
+     returns urlRequest.
+    **/
     private func prepareRequest(_ path: String, _ type: ResuestType) -> URLRequest? {
         
         guard let urlPath = path.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {return nil}
@@ -56,6 +71,9 @@ struct Webservice {
 }
 
 
+/**
+ This struct contains required endpoints.
+**/
 struct UrlExtension {
-    static let queryPath = "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages|pageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize= 200&pilimit=10&wbptterms=description&gpslimit=10&gpssearch="
+    static let queryPath = "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages|pageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize= 200&pilimit=20&wbptterms=description&gpslimit=20&gpssearch="
 }

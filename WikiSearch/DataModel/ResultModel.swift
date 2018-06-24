@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ @brief: In this file we create required data model.
+ Here basically using Codable for handling both Decodable and Encodable(If requires for encodable).
+**/
 struct ResultModel {
     let batchcomplete: Bool?
     let query: QueryResult?
@@ -72,10 +76,18 @@ extension Pages: Codable {
     init(from decoder: Decoder) throws {
         do {
             let container = try decoder.container(keyedBy: PagesContainer.self)
-            let title: String = try container.decode(String.self, forKey: .title)
+            
+            var title: String?
+            if let text: String = try container.decodeIfPresent(String.self, forKey: .title) {
+                title = text
+            }
             let pageid: Int = try container.decode(Int.self, forKey: .pageId)
-            let terms: Terms = try container.decode(Terms.self, forKey: .terms)
-//            let thumbnail: Thumbnail = try container.decode(Thumbnail.self, forKey: .title)
+            
+            var terms: Terms?
+            if let term: Terms = try container.decodeIfPresent(Terms.self, forKey: .terms) {
+                terms = term
+            }
+            
             var thumbnail: Thumbnail?
             if let thumb: Thumbnail = try container.decodeIfPresent(Thumbnail.self, forKey: .thumbnail) {
                 thumbnail = thumb

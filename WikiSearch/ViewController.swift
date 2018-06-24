@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationUI()
-        self.navigationItem.title = "SEARCH"
         viewModel.pages.bind { [unowned self] (pages) in
             guard pages != nil else {
                 DispatchQueue.main.async {
@@ -31,14 +30,30 @@ class ViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.isApiFailed = false
-//                self.resultTable.isHidden = false
                 self.resultTable.reloadData()
+            }
+        }
+        
+        viewModel.apiFailed.bind { [unowned self] (status) in
+            guard let status = status else {
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "SEARCH"
+                }
+                return
+            }
+            if status == "YES" {
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "NO RESULT 😒"
+                }
             }
         }
     }
     
     fileprivate func setupNavigationUI() {
+        navigationItem.title = "SEARCH"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.gernerateRandomColor(),NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 20.0)!]
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 
